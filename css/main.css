@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  font-family: "Montserrat", sans-serif; }
+
+body {
+  background: linear-gradient(to left, blue, #7070ff) no-repeat;
+  text-align: center;
+  height: 110vh;
+  width: 100vw;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  padding-top: 2rem;
+  color: white; }
+
+#game-container {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms ease-in-out; }
+
+canvas {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black; }
+  canvas:focus {
+    outline: none; }
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.menu {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms ease-in-out; }
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .menu ul li {
+      padding: 0;
+      margin: 0;
+      display: block; }
+      .menu ul li button {
+        background: #ff7b00;
+        color: white;
+        padding: 1rem 2rem;
+        width: 90%;
+        margin: 1rem;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-clip: text; }
+        .menu ul li button:hover {
+          cursor: pointer;
+          background: #da6900; }
+        .menu ul li button:active {
+          outline: none;
+          background: #743901; }
+
+.modal-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background: #000000af;
+  transition: all 200ms ease-in-out; }
+  .modal-container * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .modal-container button {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    color: white; }
+    .modal-container button:hover {
+      cursor: pointer; }
+
+.modal {
+  color: black;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px; }
+
+.hide {
+  display: none; }
+
+#game-container.hide {
+  display: none; }
+
+.controls {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  align-items: center; }
+  .controls * {
+    margin: 0;
+    padding: 0; }
+  .controls ul {
+    list-style: none;
+    display: flex; }
+    .controls ul li button {
+      padding: 0.25rem;
+      background: transparent;
+      margin: 0.25rem;
+      height: 2rem;
+      width: 2rem;
+      color: white;
+      border: 1px solid #221231;
+      border-radius: 5px;
+      outline: none; }
+      .controls ul li button:hover {
+        cursor: pointer;
+        background: rgba(34, 18, 49, 0.466); }
+      .controls ul li button:active {
+        background: rgba(19, 5, 32, 0.644); }
+      .controls ul li button:focus {
+        outline: none; }
+  .controls p {
+    padding: 0.25rem;
+    margin: 0.25rem; }
+
+#game-over .modal {
+  width: 300px; }

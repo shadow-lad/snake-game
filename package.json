@@ -1,0 +1,25 @@
+{
+	"name": "snake",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lite": "lite-server .",
+		"sass": "node-sass -w ./scss -o ./css",
+		"pshell": "parallelshell \"npm run lite\" \"npm run sass\"",
+		"ugjs": "uglifyjs --compress --mangle  -- ./js/*.js",
+		"start": "npm run pshell"
+	},
+	"keywords": [],
+	"author": "shadow-lad <shardav.lad21@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"cssnano": "^4.1.10",
+		"html-minifier": "^4.0.0",
+		"lite-server": "^2.5.4",
+		"node-sass": "^5.0.0",
+		"parallelshell": "^3.0.2",
+		"uglify-js": "^3.11.5"
+	}
+}
