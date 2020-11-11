@@ -25,6 +25,8 @@ var score = 0;
 var interval = 200;
 var touchStartX = null;
 var touchStartY = null;
+var touchEndX = null;
+var touchEndY = null;
 var highscore = 0;
 
 const Snake = {
@@ -273,8 +275,19 @@ function onTouchMove(e) {
 		return;
 	}
 	const touch = getTouches(e)[0];
-	var xDiff = touchStartX - touch.clientX;
-	var yDiff = touchStartY - touch.clientY;
+	touchEndX = touch.clientX;
+	touchEndY = touch.clientY;
+}
+
+function onTouchEnd(e) {
+	e.preventDefault();
+
+	if (!(touchStartX && touchStartY && touchEndX && touchEndY)) {
+		return;
+	}
+
+	var xDiff = touchStartX - touchEndX;
+	var yDiff = touchStartY - touchEndY;
 	if (Math.abs(xDiff) > Math.abs(yDiff)) {
 		if (xDiff > 0) {
 			// Left Swipe
@@ -294,11 +307,14 @@ function onTouchMove(e) {
 	}
 	touchStartX = null;
 	touchStartY = null;
+	touchEndX = null;
+	touchEndY = null;
 }
 
 canvas.addEventListener("keydown", this.keyPressed);
 canvas.addEventListener("touchstart", onTouchStart);
 canvas.addEventListener("touchmove", onTouchMove);
+canvas.addEventListener("touchend", onTouchEnd);
 
 playPause.addEventListener("click", (e)=> {
 
