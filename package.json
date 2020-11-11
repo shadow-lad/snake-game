@@ -9,7 +9,8 @@
 		"sass": "node-sass -w ./scss -o ./css",
 		"pshell": "parallelshell \"npm run lite\" \"npm run sass\"",
 		"ugjs": "uglifyjs --compress --mangle  -- ./js/*.js",
-		"start": "npm run pshell"
+		"dev": "npm run pshell",
+		"start": "npm run lite"
 	},
 	"keywords": [],
 	"author": "shadow-lad <shardav.lad21@gmail.com>",
